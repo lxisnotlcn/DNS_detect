@@ -3777,3 +3777,6 @@ traceroute to m.root-servers.net (202.12.27.33), 30 hops max, 53 byte packets
 2022-01-02T13:01:33Z
 a.root-servers.net
 b.root-servers.net
+2022-01-02T14:01:24Z
+a.root-servers.net
+b.root-servers.net
