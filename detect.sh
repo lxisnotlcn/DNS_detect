@@ -49,10 +49,9 @@ raw_data_handle(){
 	python raw_data_handle.py
 }
 
-
-
 raw_data_detect
 
+raw_data_handle
 
 
 
