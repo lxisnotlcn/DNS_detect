@@ -1,0 +1,293 @@
+2022-01-03T10:01:10Z
+a.root-servers.net
+"nnn1-mia5"
+
+; <<>> DiG 9.16.1-Ubuntu <<>> @a.root-servers.net +notcp -4 IN NS
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 42861
+;; flags: qr aa rd; QUERY: 1, ANSWER: 13, AUTHORITY: 0, ADDITIONAL: 27
+;; WARNING: recursion requested but not available
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4096
+;; QUESTION SECTION:
+;.				IN	NS
+
+;; ANSWER SECTION:
+.			518400	IN	NS	e.root-servers.net.
+.			518400	IN	NS	h.root-servers.net.
+.			518400	IN	NS	l.root-servers.net.
+.			518400	IN	NS	i.root-servers.net.
+.			518400	IN	NS	a.root-servers.net.
+.			518400	IN	NS	d.root-servers.net.
+.			518400	IN	NS	c.root-servers.net.
+.			518400	IN	NS	b.root-servers.net.
+.			518400	IN	NS	j.root-servers.net.
+.			518400	IN	NS	k.root-servers.net.
+.			518400	IN	NS	g.root-servers.net.
+.			518400	IN	NS	m.root-servers.net.
+.			518400	IN	NS	f.root-servers.net.
+
+;; ADDITIONAL SECTION:
+e.root-servers.net.	518400	IN	A	192.203.230.10
+e.root-servers.net.	518400	IN	AAAA	2001:500:a8::e
+h.root-servers.net.	518400	IN	A	198.97.190.53
+h.root-servers.net.	518400	IN	AAAA	2001:500:1::53
+l.root-servers.net.	518400	IN	A	199.7.83.42
+l.root-servers.net.	518400	IN	AAAA	2001:500:9f::42
+i.root-servers.net.	518400	IN	A	192.36.148.17
+i.root-servers.net.	518400	IN	AAAA	2001:7fe::53
+a.root-servers.net.	518400	IN	A	198.41.0.4
+a.root-servers.net.	518400	IN	AAAA	2001:503:ba3e::2:30
+d.root-servers.net.	518400	IN	A	199.7.91.13
+d.root-servers.net.	518400	IN	AAAA	2001:500:2d::d
+c.root-servers.net.	518400	IN	A	192.33.4.12
+c.root-servers.net.	518400	IN	AAAA	2001:500:2::c
+b.root-servers.net.	518400	IN	A	199.9.14.201
+b.root-servers.net.	518400	IN	AAAA	2001:500:200::b
+j.root-servers.net.	518400	IN	A	192.58.128.30
+j.root-servers.net.	518400	IN	AAAA	2001:503:c27::2:30
+k.root-servers.net.	518400	IN	A	193.0.14.129
+k.root-servers.net.	518400	IN	AAAA	2001:7fd::1
+g.root-servers.net.	518400	IN	A	192.112.36.4
+g.root-servers.net.	518400	IN	AAAA	2001:500:12::d0d
+m.root-servers.net.	518400	IN	A	202.12.27.33
+m.root-servers.net.	518400	IN	AAAA	2001:dc3::35
+f.root-servers.net.	518400	IN	A	192.5.5.241
+f.root-servers.net.	518400	IN	AAAA	2001:500:2f::f
+
+;; Query time: 303 msec
+;; SERVER: 198.41.0.4#53(198.41.0.4)
+;; WHEN: 一 1月 03 10:47:11 CST 2022
+;; MSG SIZE  rcvd: 811
+
+
+; <<>> DiG 9.16.1-Ubuntu <<>> @a.root-servers.net +tcp -4 IN NS
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 36412
+;; flags: qr aa rd; QUERY: 1, ANSWER: 13, AUTHORITY: 0, ADDITIONAL: 27
+;; WARNING: recursion requested but not available
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4096
+;; QUESTION SECTION:
+;.				IN	NS
+
+;; ANSWER SECTION:
+.			518400	IN	NS	e.root-servers.net.
+.			518400	IN	NS	h.root-servers.net.
+.			518400	IN	NS	l.root-servers.net.
+.			518400	IN	NS	i.root-servers.net.
+.			518400	IN	NS	a.root-servers.net.
+.			518400	IN	NS	d.root-servers.net.
+.			518400	IN	NS	c.root-servers.net.
+.			518400	IN	NS	b.root-servers.net.
+.			518400	IN	NS	j.root-servers.net.
+.			518400	IN	NS	k.root-servers.net.
+.			518400	IN	NS	g.root-servers.net.
+.			518400	IN	NS	m.root-servers.net.
+.			518400	IN	NS	f.root-servers.net.
+
+;; ADDITIONAL SECTION:
+e.root-servers.net.	518400	IN	A	192.203.230.10
+e.root-servers.net.	518400	IN	AAAA	2001:500:a8::e
+h.root-servers.net.	518400	IN	A	198.97.190.53
+h.root-servers.net.	518400	IN	AAAA	2001:500:1::53
+l.root-servers.net.	518400	IN	A	199.7.83.42
+l.root-servers.net.	518400	IN	AAAA	2001:500:9f::42
+i.root-servers.net.	518400	IN	A	192.36.148.17
+i.root-servers.net.	518400	IN	AAAA	2001:7fe::53
+a.root-servers.net.	518400	IN	A	198.41.0.4
+a.root-servers.net.	518400	IN	AAAA	2001:503:ba3e::2:30
+d.root-servers.net.	518400	IN	A	199.7.91.13
+d.root-servers.net.	518400	IN	AAAA	2001:500:2d::d
+c.root-servers.net.	518400	IN	A	192.33.4.12
+c.root-servers.net.	518400	IN	AAAA	2001:500:2::c
+b.root-servers.net.	518400	IN	A	199.9.14.201
+b.root-servers.net.	518400	IN	AAAA	2001:500:200::b
+j.root-servers.net.	518400	IN	A	192.58.128.30
+j.root-servers.net.	518400	IN	AAAA	2001:503:c27::2:30
+k.root-servers.net.	518400	IN	A	193.0.14.129
+k.root-servers.net.	518400	IN	AAAA	2001:7fd::1
+g.root-servers.net.	518400	IN	A	192.112.36.4
+g.root-servers.net.	518400	IN	AAAA	2001:500:12::d0d
+m.root-servers.net.	518400	IN	A	202.12.27.33
+m.root-servers.net.	518400	IN	AAAA	2001:dc3::35
+f.root-servers.net.	518400	IN	A	192.5.5.241
+f.root-servers.net.	518400	IN	AAAA	2001:500:2f::f
+
+;; Query time: 279 msec
+;; SERVER: 198.41.0.4#53(198.41.0.4)
+;; WHEN: 一 1月 03 10:47:11 CST 2022
+;; MSG SIZE  rcvd: 811
+
+traceroute to a.root-servers.net (198.41.0.4), 30 hops max, 53 byte packets
+ 1  192.168.226.2 (192.168.226.2)  0.144 ms  0.080 ms  0.060 ms
+ 2  192.168.3.1 (192.168.3.1)  4.194 ms * *
+ 3  192.168.1.1 (192.168.1.1)  8.002 ms  7.975 ms  9.702 ms
+ 4  100.85.238.1 (100.85.238.1)  13.641 ms  18.506 ms  18.509 ms
+ 5  218.203.34.117 (218.203.34.117)  18.467 ms  22.633 ms  26.416 ms
+ 6  218.203.72.77 (218.203.72.77)  25.354 ms  24.594 ms  24.542 ms
+ 7  111.24.10.25 (111.24.10.25)  31.959 ms  19.817 ms  31.200 ms
+ 8  221.183.119.169 (221.183.119.169)  50.930 ms  51.468 ms  52.245 ms
+ 9  111.24.17.106 (111.24.17.106)  52.227 ms  52.210 ms  52.192 ms
+10  221.176.16.214 (221.176.16.214)  52.237 ms  52.538 ms  52.693 ms
+11  221.183.52.1 (221.183.52.1)  52.171 ms  52.143 ms  52.125 ms
+12  221.183.55.109 (221.183.55.109)  58.830 ms  59.505 ms  60.123 ms
+13  223.120.12.213 (223.120.12.213)  226.906 ms  228.554 ms  229.491 ms
+14  223.120.6.98 (223.120.6.98)  226.108 ms  225.834 ms  229.357 ms
+15  223.118.10.193 (223.118.10.193)  232.684 ms  232.234 ms  233.848 ms
+16  223.118.10.254 (223.118.10.254)  259.376 ms  260.026 ms  260.644 ms
+17  223.118.11.110 (223.118.11.110)  260.625 ms  260.575 ms  260.539 ms
+18  223.118.11.130 (223.118.11.130)  311.308 ms  300.495 ms  304.715 ms
+19  198.32.242.166 (198.32.242.166)  285.395 ms  285.135 ms  286.810 ms
+20  209.131.134.127 (209.131.134.127)  287.344 ms  306.670 ms  307.542 ms
+21  a.root-servers.net (198.41.0.4)  304.054 ms  303.627 ms  304.741 ms
+
+; <<>> DiG 9.16.1-Ubuntu <<>> @223.5.5.5 +noedns IN NS
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 38485
+;; flags: qr rd ra; QUERY: 1, ANSWER: 13, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;.				IN	NS
+
+;; ANSWER SECTION:
+.			3118	IN	NS	i.root-servers.net.
+.			3118	IN	NS	d.root-servers.net.
+.			3118	IN	NS	a.root-servers.net.
+.			3118	IN	NS	k.root-servers.net.
+.			3118	IN	NS	h.root-servers.net.
+.			3118	IN	NS	m.root-servers.net.
+.			3118	IN	NS	c.root-servers.net.
+.			3118	IN	NS	e.root-servers.net.
+.			3118	IN	NS	g.root-servers.net.
+.			3118	IN	NS	f.root-servers.net.
+.			3118	IN	NS	j.root-servers.net.
+.			3118	IN	NS	l.root-servers.net.
+.			3118	IN	NS	b.root-servers.net.
+
+;; Query time: 40 msec
+;; SERVER: 223.5.5.5#53(223.5.5.5)
+;; WHEN: 一 1月 03 10:47:32 CST 2022
+;; MSG SIZE  rcvd: 228
+
+
+; <<>> DiG 9.16.1-Ubuntu <<>> @114.114.114.114 +noedns IN NS
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 64107
+;; flags: qr rd ra; QUERY: 1, ANSWER: 13, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;.				IN	NS
+
+;; ANSWER SECTION:
+.			2237	IN	NS	c.root-servers.net.
+.			2237	IN	NS	d.root-servers.net.
+.			2237	IN	NS	e.root-servers.net.
+.			2237	IN	NS	f.root-servers.net.
+.			2237	IN	NS	g.root-servers.net.
+.			2237	IN	NS	h.root-servers.net.
+.			2237	IN	NS	i.root-servers.net.
+.			2237	IN	NS	j.root-servers.net.
+.			2237	IN	NS	k.root-servers.net.
+.			2237	IN	NS	l.root-servers.net.
+.			2237	IN	NS	m.root-servers.net.
+.			2237	IN	NS	a.root-servers.net.
+.			2237	IN	NS	b.root-servers.net.
+
+;; Query time: 52 msec
+;; SERVER: 114.114.114.114#53(114.114.114.114)
+;; WHEN: 一 1月 03 10:47:32 CST 2022
+;; MSG SIZE  rcvd: 228
+
+
+; <<>> DiG 9.16.1-Ubuntu <<>> @119.29.29.29 +noedns IN NS
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 9784
+;; flags: qr rd ra; QUERY: 1, ANSWER: 13, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;.				IN	NS
+
+;; ANSWER SECTION:
+.			77821	IN	NS	l.root-servers.net.
+.			77821	IN	NS	b.root-servers.net.
+.			77821	IN	NS	c.root-servers.net.
+.			77821	IN	NS	h.root-servers.net.
+.			77821	IN	NS	f.root-servers.net.
+.			77821	IN	NS	k.root-servers.net.
+.			77821	IN	NS	d.root-servers.net.
+.			77821	IN	NS	j.root-servers.net.
+.			77821	IN	NS	m.root-servers.net.
+.			77821	IN	NS	a.root-servers.net.
+.			77821	IN	NS	e.root-servers.net.
+.			77821	IN	NS	g.root-servers.net.
+.			77821	IN	NS	i.root-servers.net.
+
+;; Query time: 60 msec
+;; SERVER: 119.29.29.29#53(119.29.29.29)
+;; WHEN: 一 1月 03 10:47:32 CST 2022
+;; MSG SIZE  rcvd: 228
+
+
+; <<>> DiG 9.16.1-Ubuntu <<>> @2400:3200::1 +noedns IN NS
+; (1 server found)
+;; global options: +cmd
+;; connection timed out; no servers could be reached
+
+
+; <<>> DiG 9.16.1-Ubuntu <<>> @2409:8088::a +noedns IN NS
+; (1 server found)
+;; global options: +cmd
+;; connection timed out; no servers could be reached
+
+
+; <<>> DiG 9.16.1-Ubuntu <<>> @2402:4e00:: +noedns IN NS
+; (1 server found)
+;; global options: +cmd
+;; connection timed out; no servers could be reached
+
+
+; <<>> DiG 9.16.1-Ubuntu <<>> @a.root-servers.net errcom +nord
+; (2 servers found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NXDOMAIN, id: 22050
+;; flags: qr aa; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4096
+;; QUESTION SECTION:
+;errcom.				IN	A
+
+;; AUTHORITY SECTION:
+.			86400	IN	SOA	a.root-servers.net. nstld.verisign-grs.com. 2022010201 1800 900 604800 86400
+
+;; Query time: 296 msec
+;; SERVER: 198.41.0.4#53(198.41.0.4)
+;; WHEN: 一 1月 03 10:48:23 CST 2022
+;; MSG SIZE  rcvd: 110
+
+117.179.127.69
+117.179.127.69
+117.179.127.69
+117.179.127.69
+117.179.127.69
+117.179.127.69
+117.179.127.69
+117.179.127.69
+117.179.127.69
+117.179.127.69
+117.179.127.69
+117.179.127.69
