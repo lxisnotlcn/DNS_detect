@@ -1,9 +1,18 @@
 import json
 import re
 import threading
+import pymysql
 
 json_data = {}
 data = json.loads(json.dumps(json_data))
+conn = pymysql.connect(
+        host = 'localhost',#mysql服务器地址
+        port = 3306,#端口号
+        user = 'root',#用户名
+        passwd = '02230317liuxin',#密码
+        db = 'dns_json',#数据库名称
+        charset = 'utf8',#连接编码，根据需要填写
+    )
 
 class myThread(threading.Thread):
     def __init__(self, filename,ID):
@@ -102,6 +111,16 @@ def handle(filename,ID):
     _root['SourceIP_ipv6'] = ""
     data[ID] = _root
 
+def save():
+    cur = conn.cursor()
+    sql = "INSERT INTO `log` VALUES ('"+str(data['TimeStamp'])+"','"+json.dumps(data['A'])+"','"+json.dumps(data['B'])+"','"+json.dumps(data['C'])\
+          +"','"+json.dumps(data['D'])+"','"+json.dumps(data['E'])+"','"+json.dumps(data['F'])+"','"+json.dumps(data['G'])+"','"+json.dumps(data['H'])+"','"+json.dumps(data['I'])\
+          +"','"+json.dumps(data['J'])+"','"+json.dumps(data['K'])+"','"+json.dumps(data['L'])+"','"+json.dumps(data['M'])+"')"
+    #print(sql)
+    cur.execute(sql)
+    conn.commit()
+    conn.close()
+
 if __name__ == '__main__':
     _thread = []
     for root in 'abcdefghijklm':
@@ -109,6 +128,10 @@ if __name__ == '__main__':
         _thread.append(thread)
     for t in _thread:
         t.start()
+    for t in _thread:
+        t.join()
+    print(data['TimeStamp'])
     with open("log.json", "w") as write_f:
         write_f.write(json.dumps(data, ensure_ascii=False))
+    save()
 
