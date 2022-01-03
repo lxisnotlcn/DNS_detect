@@ -1,12 +1,21 @@
 import json
 import re
+import threading
 
 json_data = {}
-
 data = json.loads(json.dumps(json_data))
 
-for root in 'abcdefghijklm':
-    f = open('./raw_data/raw_data_'+root+'.txt', "r", encoding='utf-8')
+class myThread(threading.Thread):
+    def __init__(self, filename,ID):
+        threading.Thread.__init__(self)
+        self.filename = filename
+        self.ID = ID
+
+    def run(self):
+        handle(self.filename,self.ID)
+
+def handle(filename,ID):
+    f = open(filename, "r", encoding='utf-8')
     tmp = f.readlines()
     i = 0
     length = len(tmp)
@@ -91,8 +100,15 @@ for root in 'abcdefghijklm':
         i += 1
     _root['SourceIP_ipv4'] = tmp[i].replace("\n", "")
     _root['SourceIP_ipv6'] = ""
-    data[root.upper()] = _root
+    data[ID] = _root
 
-with open("log.json", "w") as write_f:
-    write_f.write(json.dumps(data, ensure_ascii=False))
+if __name__ == '__main__':
+    _thread = []
+    for root in 'abcdefghijklm':
+        thread = myThread('./raw_data/raw_data_'+root+'.txt',root.upper())
+        _thread.append(thread)
+    for t in _thread:
+        t.start()
+    with open("log.json", "w") as write_f:
+        write_f.write(json.dumps(data, ensure_ascii=False))
 
