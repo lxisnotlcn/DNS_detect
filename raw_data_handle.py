@@ -6,12 +6,12 @@ import pymysql
 json_data = {}
 data = json.loads(json.dumps(json_data))
 conn = pymysql.connect(
-        host = 'localhost',#mysql服务器地址
-        port = 3306,#端口号
-        user = 'root',#用户名
-        passwd = '02230317liuxin',#密码
-        db = 'dns_json',#数据库名称
-        charset = 'utf8',#连接编码，根据需要填写
+        host = 'localhost',
+        port = 3306,
+        user = 'root',
+        passwd = '02230317liuxin',
+        db = 'dns_json',
+        charset = 'utf8',
     )
 
 class myThread(threading.Thread):
@@ -130,7 +130,7 @@ if __name__ == '__main__':
         t.start()
     for t in _thread:
         t.join()
-    print(data['TimeStamp'])
+    #print(data['TimeStamp'])
     with open("log.json", "w") as write_f:
         write_f.write(json.dumps(data, ensure_ascii=False))
     save()
