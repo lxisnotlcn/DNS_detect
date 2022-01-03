@@ -6,7 +6,7 @@ import pymysql
 json_data = {}
 data = json.loads(json.dumps(json_data))
 conn = pymysql.connect(
-        host = 'localhost',
+        host = '192.168.3.17',
         port = 3306,
         user = 'root',
         passwd = '02230317liuxin',
@@ -19,9 +19,17 @@ class myThread(threading.Thread):
         threading.Thread.__init__(self)
         self.filename = filename
         self.ID = ID
+        self._error = False
 
     def run(self):
-        handle(self.filename,self.ID)
+        try:
+            handle(self.filename,self.ID)
+        except IndexError:
+            print("data error")
+            self._error = True
+        except:
+            print("system error")
+            self._error = True
 
 def handle(filename,ID):
     f = open(filename, "r", encoding='utf-8')
@@ -42,12 +50,18 @@ def handle(filename,ID):
             query = re.search('[1-9][0-9]*', tmp[i])
             query_latency['Ipv4_udp'] = query.group()
             break
+        elif 'timed out' in tmp[i]:
+            query_latency['Ipv4_udp'] = -1
+            break
         i += 1
     i += 1
     while i < length:
         if 'Query time:' in tmp[i]:
             query = re.search('[1-9][0-9]*', tmp[i])
             query_latency['Ipv4_tcp'] = query.group()
+            break
+        elif 'timed out' in tmp[i]:
+            query_latency['Ipv4_tcp'] = -1
             break
         i += 1
     i += 1
@@ -114,8 +128,8 @@ def handle(filename,ID):
 def save():
     cur = conn.cursor()
     sql = "INSERT INTO `log` VALUES ('"+str(data['TimeStamp'])+"','"+json.dumps(data['A'])+"','"+json.dumps(data['B'])+"','"+json.dumps(data['C'])\
-          +"','"+json.dumps(data['D'])+"','"+json.dumps(data['E'])+"','"+json.dumps(data['F'])+"','"+json.dumps(data['G'])+"','"+json.dumps(data['H'])+"','"+json.dumps(data['I'])\
-          +"','"+json.dumps(data['J'])+"','"+json.dumps(data['K'])+"','"+json.dumps(data['L'])+"','"+json.dumps(data['M'])+"')"
+          +"','"+json.dumps(data['D'])+"','"+json.dumps(data['E'])+"','"+json.dumps(data['F'])+"','"+json.dumps(data['G'])+"','"+json.dumps(data['H'])\
+          +"','"+json.dumps(data['I'])+"','"+json.dumps(data['J'])+"','"+json.dumps(data['K'])+"','"+json.dumps(data['L'])+"','"+json.dumps(data['M'])+"')"
     #print(sql)
     cur.execute(sql)
     conn.commit()
@@ -130,7 +144,9 @@ if __name__ == '__main__':
         t.start()
     for t in _thread:
         t.join()
-    #print(data['TimeStamp'])
+    for t in _thread:
+        if t._error:
+            exit(0)
     with open("log.json", "w") as write_f:
         write_f.write(json.dumps(data, ensure_ascii=False))
     save()
