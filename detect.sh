@@ -52,9 +52,15 @@ raw_data_handle(){
 	python raw_data_handle.py
 }
 
-raw_data_detect
+while true
+do
+    echo "start"
+    raw_data_detect
 
-raw_data_handle
+    raw_data_handle
+    echo "end"
+    sleep 1m
+done
 
 
 
