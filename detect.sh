@@ -12,7 +12,7 @@ raw_data_detect(){
 	{
 	 file="./raw_data/raw_data_"${RSI:0:1}".txt"
 	 exec 1> $file
-	 date +%Y-%m-%dT%H:%m:%SZ
+	 date +%Y-%m-%dT%H:%M:%SZ
 	 echo $RSI
 		
 		dig @$RSI +noedns +short CHAOS TXT hostname.bind
