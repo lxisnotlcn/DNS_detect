@@ -69,7 +69,7 @@ def handle(filename,ID):
     query_latency['Ipv6_tcp'] = ""
     _root['QueryLatency'] = query_latency
     # 路由路径
-    while tmp[i] != "\n":
+    while tmp[i][0] != "t":
         i += 1
     i += 1
     start = i
@@ -115,6 +115,11 @@ def handle(filename,ID):
         if 'status:' in tmp[i]:
             status = re.search('status: [A-Z]*', tmp[i])
             _root['Status'] = status.group().split(" ")[1]
+            if status.group().split(" ")[1] == "NOERROR":
+                file1 = open(filename, "r", encoding='utf-8')
+                file2 = open("errorlog.txt", "w", encoding='utf-8')
+                s = file1.read()
+                file2.write(s)
             break
         i += 1
     i += 1
