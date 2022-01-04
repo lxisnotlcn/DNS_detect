@@ -31,6 +31,7 @@ class myThread(threading.Thread):
             print("system error")
             self._error = True
 
+
 def handle(filename,ID):
     f = open(filename, "r", encoding='utf-8')
     tmp = f.readlines()
@@ -115,11 +116,6 @@ def handle(filename,ID):
         if 'status:' in tmp[i]:
             status = re.search('status: [A-Z]*', tmp[i])
             _root['Status'] = status.group().split(" ")[1]
-            if status.group().split(" ")[1] == "NOERROR":
-                file1 = open(filename, "r", encoding='utf-8')
-                file2 = open("errorlog.txt", "w", encoding='utf-8')
-                s = file1.read()
-                file2.write(s)
             break
         i += 1
     i += 1
@@ -140,6 +136,13 @@ def save():
     conn.commit()
     conn.close()
 
+def error_record(ID):
+    file1 = open('./raw_data/raw_data_'+ID.lower()+'.txt', "r", encoding='utf-8')
+    file2 = open("./error_log/"+str(data['TimeStamp']).replace(":","-")+"_"+ID+".txt", "w", encoding='utf-8')
+    s = file1.read()
+    file2.write(s)
+
+
 if __name__ == '__main__':
     _thread = []
     for root in 'abcdefghijklm':
@@ -151,6 +154,7 @@ if __name__ == '__main__':
         t.join()
     for t in _thread:
         if t._error:
+            error_record(t.ID)
             exit(0)
     with open("log.json", "w") as write_f:
         write_f.write(json.dumps(data, ensure_ascii=False))
