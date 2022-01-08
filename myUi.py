@@ -8,6 +8,7 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtCore import Qt
+from kafka import KafkaProducer
 import os
 import time
 import json
@@ -256,6 +257,11 @@ class Ui_MainWindow(object):
                     exit(0)
             with open("log.json", "w") as write_f:
                 write_f.write(json.dumps(raw_data_handle.data, ensure_ascii=False))
+            producer = KafkaProducer(bootstrap_servers=["localhost:9092"],
+                                     api_version=(0, 10, 0),
+                                     value_serializer=lambda v: json.dumps(v).encode('utf-8'))
+
+            producer.send("test", raw_data_handle.data, partition=0)
             raw_data_handle.save()
             self.plainTextEdit.setPlainText("sleep 30s")
             print("end")
